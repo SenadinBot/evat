@@ -1,0 +1,55 @@
+// Theme setup
+
+$primary:   #EA5D50;
+$secondary: #2C3F7C;
+$tertiary:  #F8D0CE;
+$success:   #00c468;
+$info:      #0B5540;
+$warning:   #F4B233;
+$danger:    #ff2e38;
+$light:     #F8F9FB;
+$dark:      #1E2024;
+$gray:      #9A9A9A;
+$lightgray: #363636;
+$white:     #ffffff;
+$black:     #000000;
+$secondgray: #EFF3FA;
+$primary-lighten: rgba(248, 208, 206, .66);
+$tertiary-lighten: rgba(248, 226, 225, .37);
+
+$spacer: 1rem;
+
+// Set custom scheme
+
+$theme-colors:(
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "tertiary":   $tertiary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark,
+    "gray":       $gray,
+    "lightgray":  $lightgray,
+    "white":      $white,
+    "black":      $black,
+    "secondgray": $secondgray,
+    "primary-lighten": $primary-lighten, 
+    "tertiary-lighten": $tertiary-lighten,
+  ) 
+);
+
+// Colors
+
+$body-bg:                           $white;
+$body-color:                        $dark;
+$border-color:                      $light;
+
+// Fonts
+
+$font-family-heading:               'Nunito', sans-serif;
+$font-family-body:                  'Nunito', sans-serif;
+$headings-font-weight:              700;
