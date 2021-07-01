@@ -12,11 +12,11 @@
     @include radius(0.375rem); // approx 6px
 }
 
-@mixin radius-sm {
+@mixin radius-md {
     @include radius(0.625rem); // approx 10px
 }
 
-@mixin radius-md {
+@mixin radius-lg {
     @include radius(1rem); //  approx 16px
 }
 
