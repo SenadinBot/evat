@@ -1,4 +1,24 @@
 body {
     background-color: $body-bg;
     font-family: $font-family-base;
+
+    &::-webkit-scrollbar {
+        width: .4rem;
+        height: .4rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #eff2f5;
+    }
+}
+
+div {
+    &::-webkit-scrollbar {
+        width: .4rem;
+        height: .4rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $gray;
+    }
 }

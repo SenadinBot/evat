@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { SidebarService } from 'src/core/services/sidebar.service';
 
 @Component({
   selector: 'app-shared',
@@ -6,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SharedComponent implements OnInit {
 
-  constructor() { }
+  readonly showSidebar = new Observable<boolean>()
+
+  constructor(
+    private sidebarService: SidebarService
+  ) {
+    this.showSidebar = sidebarService.expandToggle;
+  }
 
   ngOnInit(): void {
   }

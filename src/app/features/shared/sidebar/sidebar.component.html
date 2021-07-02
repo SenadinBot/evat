@@ -1,13 +1,53 @@
-<fa-icon [icon]="['fas', 'angle-left']"></fa-icon><br>
-<fa-icon [icon]="['fas', 'tachometer-alt']"></fa-icon><br>
-<fa-icon [icon]="['fas', 'chart-line']"></fa-icon><br>
-<fa-icon [icon]="['fas', 'receipt']"></fa-icon><br>
-<fa-icon [icon]="['fas', 'file-signature']"></fa-icon><br>
-<fa-icon [icon]="['fas', 'building']"></fa-icon><br>
-<fa-icon [icon]="['fas', 'users']"></fa-icon><br>
-<fa-icon [icon]="['fas', 'users']"></fa-icon><br>
-<fa-icon [icon]="['fas', 'home']"></fa-icon><br>
-<fa-icon [icon]="['fas', 'list-alt']"></fa-icon><br>
-<fa-icon [icon]="['fas', 'file-invoice-dollar']"></fa-icon><br>
-<fa-icon [icon]="['fas', 'cog']"></fa-icon><br>
-<fa-icon [icon]="['fas', 'angle-down']"></fa-icon>
+<!-- <fa-icon [icon]="['fas', 'angle-down']"></fa-icon> -->
+
+<nav class="sidebar">
+
+    <div class="logo d-flex align-items-center border-bottom border-light p-4">
+
+        <a href="#">
+            <img src="./assets/logo.png" alt="Logo">
+        </a>
+
+        <div class="toggle-icon" (click)="expandSidebar()">
+            <fa-icon [icon]="['fas', 'angle-left']"></fa-icon>
+        </div>
+
+    </div>
+
+    <div class="sidenav-menu">
+        <ul class="m-0 mb-4 p-0">
+            <li *ngFor="let item of links">
+                <a mat-button routerLink="{{item.link}}" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }">
+
+                    <fa-icon [icon]="item.icon"></fa-icon>
+
+                    <span>
+                        {{item.label}}
+                    </span>
+
+                </a>
+            </li>
+        </ul>
+
+        <div class="menu-title">
+            <p class="text-uppercase text-light fw-bold ps-3 mb-0">My Company</p>
+        </div>
+
+        <ul class="m-0 p-0">
+            <li *ngFor="let item of companyLinks">
+                <a mat-button routerLink="{{item.link}}" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }">
+
+                    <fa-icon [icon]="item.icon"></fa-icon>
+
+                    <span>
+                        {{item.label}}
+                    </span>
+
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</nav>

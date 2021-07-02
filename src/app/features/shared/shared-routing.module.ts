@@ -6,8 +6,13 @@ const routes: Routes = [
   { 
     path: '', 
     component: SharedComponent,
-    loadChildren: () => import('../registration/registration.module').then(m => m.RegistrationModule) 
-  }
+    children: [
+      {
+        path: 'registration',
+        loadChildren: () => import('../registration/registration.module').then(m => m.RegistrationModule)
+      }
+    ]
+  },
 ];
 
 @NgModule({

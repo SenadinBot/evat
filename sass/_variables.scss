@@ -9,6 +9,7 @@ $danger:      #ff2e38;
 $light:       #CED3D9;
 $dark:        #3B3943;
 $gray:        #E5E5E5;
+$lightGray:   #A1A9B2;
 $white:       #ffffff;
 $black:       #000000;
 $secondgray:  #EFF3FA;
@@ -26,6 +27,7 @@ $theme-colors:(
     "light":        $light,
     "dark":         $dark,
     "gray":         $gray,
+    "lightGray":    $lightGray,
     "white":        $white,
     "black":        $black,
     "secondgray":   $secondgray,
@@ -42,6 +44,9 @@ $border-color:                      $light;
 
 $font-family-base:                  'Asap', sans-serif;
 $headings-font-weight:              700;
+
+$enable-shadows:                    true;
+$enable-negative-margins:           true;
 
 // Spacing
 
@@ -79,3 +84,11 @@ $container-max-widths: (
   xl: 1140px,
   xxl: 1340px
 );
+
+// Forms
+$input-font-size:                     .875rem;
+$form-select-indicator-color:         $primary;
+$form-select-bg-size:                 20px 17px;
+$form-select-color:                   $dark;
+$form-select-box-shadow:              none;
+$form-select-bg-position:             right -.14rem;

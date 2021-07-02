@@ -1,0 +1,16 @@
+.wrapper {
+    transition: padding-left .3s ease;
+    padding-left: 207px;
+    height: 100%;
+}
+
+.content {
+    padding: 24px;
+    background-color: #F5F6F7;
+}
+
+.collapsed {
+    .wrapper {
+        padding-left: 80px;
+    }
+}

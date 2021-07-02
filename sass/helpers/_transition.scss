@@ -122,3 +122,7 @@
 @mixin translate-bottom-sm {
     @include transform(translate3d(0,10px,0));
 }
+
+@mixin short-transition {
+    @include transition(all .3s);
+}

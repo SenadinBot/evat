@@ -1,0 +1,39 @@
+.navbar {
+    background-color: $white;
+    padding: 16px 12px 16px 20px;
+
+    .form-select {
+        border: none;
+        box-shadow: none;
+        padding-left: 0;
+        cursor: pointer;
+    }
+
+    .filters-container {
+        label {
+            font-size: .75rem;
+            font-weight: 700;
+            color: $lightGray;
+            text-transform: uppercase;
+        }
+    }
+
+    .navbar-nav {
+        a {
+            text-decoration: none;
+            color: $dark;
+        }
+
+        fa-icon {
+            color: $dark;
+
+            .fa-user {
+                font-size: 1.25rem;
+            }
+
+            .fa-bell {
+                font-size: 1.45rem;
+            }
+        }
+    }
+}
