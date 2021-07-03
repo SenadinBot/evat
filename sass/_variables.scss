@@ -43,7 +43,6 @@ $border-color:                      $light;
 // Fonts
 
 $font-family-base:                  'Asap', sans-serif;
-// $headings-font-weight:              700;
 
 $enable-shadows:                    false;
 $enable-negative-margins:           true;
@@ -102,6 +101,7 @@ $btn-border-radius:                   1rem;
 // Breadcrumb
 $breadcrumb-font-size:                .875rem;
 $breadcrumb-active-color:             $dark;
+$breadcrumb-divider:                  quote("");
 
 // Card
 $card-spacer-y:                       1.5rem;
