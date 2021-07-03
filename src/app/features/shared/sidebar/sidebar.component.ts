@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faAngleLeft, faBuilding, faChartLine, faCog, faFileInvoiceDollar, faFileSignature, faHome, faListAlt, faReceipt, faTachometerAlt, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faTimesCircle, faEllipsisV, faAngleLeft, faBuilding, faChartLine, faCog, faFileInvoiceDollar, faFileSignature, faHome, faListAlt, faReceipt, faTachometerAlt, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { merge, Observable, Subject } from 'rxjs';
 import { SidebarService } from 'src/core/services/sidebar.service';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { distinctUntilChanged, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,9 +12,16 @@ import { SidebarService } from 'src/core/services/sidebar.service';
 })
 export class SidebarComponent implements OnInit {
 
+  menuICon = faEllipsisV;
+  closeIcon = faTimesCircle;
+
+  readonly isMenuShown: Observable<boolean>;
+  readonly show = new Subject<boolean>();
+
   constructor(
     private library: FaIconLibrary,
-    private sidebarService: SidebarService
+    private sidebarService: SidebarService,
+    private breakpointObserver: BreakpointObserver
   ) {
     library.addIcons(
       faAngleLeft,
@@ -26,6 +36,14 @@ export class SidebarComponent implements OnInit {
       faFileInvoiceDollar,
       faCog
     );
+    this.isMenuShown = merge(
+      this.breakpointObserver
+        .observe([Breakpoints.Large, Breakpoints.XLarge])
+        .pipe(
+          map(state => state.matches),
+          distinctUntilChanged()
+        ),
+      this.show);
   }
 
   links = [
@@ -51,6 +69,16 @@ export class SidebarComponent implements OnInit {
   expandSidebar() {
     this.sidebarService.expandSidebar();
     console.log('test');
+  }
+
+  openSidebar() {
+    this.show.next(true);
+    this.sidebarService.expandToggleSource.next(false);
+  }
+
+  closeSidebar() {
+    this.show.next(false);
+    this.sidebarService.expandToggleSource.next(false);
   }
 
 }

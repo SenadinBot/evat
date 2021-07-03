@@ -1,28 +1,39 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container-fluid">
-        <div class="d-flex justify-content-between align-items-center w-100">
+        <div class="d-flex justify-content-between align-items-center w-100 position-relative">
 
-            <div class="filters-container collapse navbar-collapse" id="navbarFilterToggler">
+            <a href="#"
+               class="d-xl-none me-lg-6">
+                <img src="./assets/logo.png"
+                     alt="Logo">
+            </a>
+
+            <div class="filters-container collapse navbar-collapse"
+                 id="navbarFilterToggler">
                 <app-navbar-filters></app-navbar-filters>
             </div>
 
-            <ul class="navbar-nav">
+            <ul class="navbar-nav flex-row">
 
-                <li class="nav-item">
-                    <fa-icon [icon]="bellIcon" type="button" class="navbar-toggler" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#navbarFilterToggler"
-                        aria-controls="navbarFilterToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <li class="nav-item me-2 me-sm-5 pe-sm-2">
+                    <fa-icon [icon]="filterIcon"
+                             class="navbar-toggler"
+                             data-bs-toggle="collapse"
+                             data-bs-target="#navbarFilterToggler"
+                             aria-controls="navbarFilterToggler"
+                             aria-expanded="false">
                     </fa-icon>
                 </li>
 
-                <li class="nav-item dropdown me-5 pe-2">
+                <li class="nav-item dropdown me-4 me-sm-5 pe-sm-2">
 
-                    <a href="#" class="position-relative">
+                    <a href="#"
+                       class="position-relative">
 
                         <fa-icon [icon]="bellIcon"></fa-icon>
 
                         <span
-                            class="position-absolute top-0 start-100 translate-middle p-1 ms-n1 bg-danger border border-white rounded-circle">
+                              class="position-absolute top-0 start-100 translate-middle p-1 ms-n1 bg-danger border border-white rounded-circle">
                             <span class="visually-hidden">New alerts</span>
                         </span>
 
@@ -31,13 +42,56 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a href="#" class="fw-bold">
+
+                    <a href="#"
+                       class="fw-bold"
+                       type="button"
+                       id="userDropdownMenu"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">
 
                         <span class="me-2">Kruno</span>
 
                         <fa-icon [icon]="userIcon"></fa-icon>
 
                     </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end profile-menu position-absolute mt-2 py-1"
+                        aria-labelledby="userDropdownMenu">
+
+                        <a href="#"
+                           class="dropdown-item d-flex align-items-center">
+                            <fa-icon [icon]="profileIcon"
+                                     class="me-2"></fa-icon>
+                            My Profile
+                        </a>
+
+                        <a href="#"
+                           class="dropdown-item d-flex align-items-center">
+                            <fa-icon [icon]="settingsIcon"
+                                     class="me-2"></fa-icon>
+                            Settings
+                        </a>
+
+                        <a href="#"
+                           class="dropdown-item d-flex align-items-center">
+                            <fa-icon [icon]="supportIcon"
+                                     class="me-2"></fa-icon>
+                            Support
+                        </a>
+
+                        <div role="separator"
+                             class="dropdown-divider my-1"></div>
+
+                        <a href="#"
+                           class="dropdown-item d-flex align-items-center">
+                            <fa-icon [icon]="logoutIcon"
+                                     class="me-2 text-danger"></fa-icon>
+                            Logout
+                        </a>
+
+                    </ul>
+
                 </li>
 
             </ul>
@@ -45,16 +99,3 @@
         </div>
     </div>
 </nav>
-
-
-<!-- <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-        aria-expanded="false">
-        Dropdown button
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-    </ul>
-</div> -->

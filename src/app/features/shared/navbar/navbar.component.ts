@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { faBell, faUser } from '@fortawesome/free-solid-svg-icons';
-import { faBell, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faBell, faUser, faLifeRing } from '@fortawesome/free-regular-svg-icons';
+import { faSignOutAlt, faCog, faUserCircle, faFilter } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -11,6 +11,11 @@ export class NavbarComponent implements OnInit {
 
   bellIcon = faBell;
   userIcon = faUser;
+  filterIcon = faFilter;
+  profileIcon = faUserCircle;
+  settingsIcon = faCog;
+  supportIcon = faLifeRing;
+  logoutIcon = faSignOutAlt;
 
   constructor() { }
 

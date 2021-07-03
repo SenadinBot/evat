@@ -1,0 +1,9 @@
+{
+    "javascript.referencesCodeLens.enabled": true,
+    "javascript.suggest.completeFunctionCalls": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.format.semicolons": "insert",
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "html.format.wrapAttributes": "force-aligned"
+}

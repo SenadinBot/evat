@@ -7,8 +7,27 @@
     overflow: hidden;
     background-color: $white;
     width: 207px;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
     @include transition(width .3s ease);
+
+    @include media-breakpoint-down(xl) {
+        & {
+            left: -207px; 
+            top: 59px;
+            @include transition(all 0.3s ease 0s);
+        }
+    }
+
+    @include media-breakpoint-only(lg) {
+        & {
+            top: 89px;
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        & {
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+        }
+    }   
 
     img {
         @include short-transition;
@@ -106,8 +125,13 @@
     }
 
     .sidenav-menu {
-        height: calc(100% - 75px);
         overflow-y: auto;
+        height: 100%;
+        @include media-breakpoint-up(xl) {
+            & {
+                height: calc(100% - 75px);
+            }
+        }
     }
     
     .logo {
@@ -117,6 +141,22 @@
     .menu-title {
         height: 24px;
         @include short-transition;
+    }
+
+    &.show-sidebar {
+        @include media-breakpoint-down(xl) {
+            & {
+                left: 0;
+            }
+        }
+    }
+
+    .close-sidebar {
+        fa-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+            color: $primary;
+        }
     }
 }
 
@@ -189,5 +229,27 @@
         .logo {
             justify-content: center;
         }
+    }
+}
+
+.mobile-menu-icon {
+    background-color: rgba(224, 224, 224, .8);
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    z-index: 9;
+    bottom: 20px;
+    left: 24px;
+    opacity: 0;
+
+    fa-icon {
+        color: $primary;
+        font-size: 1.5rem;
+        @include centered;
+    }
+
+    &.show-menu-icon {
+        opacity: 1;
     }
 }

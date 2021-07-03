@@ -1,24 +1,33 @@
-<!-- <fa-icon [icon]="['fas', 'angle-down']"></fa-icon> -->
+<nav class="sidebar"
+     [class.show-sidebar]="isMenuShown | async">
 
-<nav class="sidebar">
-
-    <div class="logo d-flex align-items-center border-bottom border-light p-4">
+    <div class="logo d-none d-xl-flex align-items-center border-bottom border-light p-4">
 
         <a href="#">
-            <img src="./assets/logo.png" alt="Logo">
+            <img src="./assets/logo.png"
+                 alt="Logo">
         </a>
 
-        <div class="toggle-icon" (click)="expandSidebar()">
+        <div class="toggle-icon"
+             (click)="expandSidebar()">
             <fa-icon [icon]="['fas', 'angle-left']"></fa-icon>
         </div>
 
     </div>
 
     <div class="sidenav-menu">
+
+        <div class="close-sidebar d-flex d-xl-none justify-content-center p-3"
+             (click)="closeSidebar()">
+            <fa-icon [icon]="closeIcon"></fa-icon>
+        </div>
+
         <ul class="m-0 mb-4 p-0">
             <li *ngFor="let item of links">
-                <a mat-button routerLink="{{item.link}}" routerLinkActive="active"
-                    [routerLinkActiveOptions]="{ exact: true }">
+                <a mat-button
+                   routerLink="{{item.link}}"
+                   routerLinkActive="active"
+                   [routerLinkActiveOptions]="{ exact: true }">
 
                     <fa-icon [icon]="item.icon"></fa-icon>
 
@@ -36,8 +45,10 @@
 
         <ul class="m-0 p-0">
             <li *ngFor="let item of companyLinks">
-                <a mat-button routerLink="{{item.link}}" routerLinkActive="active"
-                    [routerLinkActiveOptions]="{ exact: true }">
+                <a mat-button
+                   routerLink="{{item.link}}"
+                   routerLinkActive="active"
+                   [routerLinkActiveOptions]="{ exact: true }">
 
                     <fa-icon [icon]="item.icon"></fa-icon>
 
@@ -48,6 +59,13 @@
                 </a>
             </li>
         </ul>
+
     </div>
 
 </nav>
+
+<div class="mobile-menu-icon"
+     [class.show-menu-icon]="!(isMenuShown | async)"
+     (click)="openSidebar()">
+    <fa-icon [icon]="menuICon"></fa-icon>
+</div>

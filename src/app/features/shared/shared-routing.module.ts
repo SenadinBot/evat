@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { SharedComponent } from './shared.component';
 
 const routes: Routes = [
-  { 
-    path: '', 
+  {
+    path: '',
     component: SharedComponent,
     children: [
       {
