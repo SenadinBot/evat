@@ -1,4 +1,69 @@
-<p>registration works!</p>
+<div class="d-sm-flex justify-content-between flex-wrap flex-md-nowrap align-items-end mb-4">
 
+    <div class="mb-4 mb-sm-0">
 
-<h2>Test</h2>
+        <h4 class="m-0">Registration</h4>
+
+        <p class="text-lightGray m-0">Pearce Paul</p>
+
+    </div>
+
+    <div class="text-center">
+        <a href="#"
+           class="btn btn-primary disabled">
+            Start new Vat registration
+        </a>
+    </div>
+
+</div>
+
+<div class="card card-body py-2">
+    <div class="table-responsive">
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th scope="col"
+                        class="sort">
+                        Country
+                        <fa-icon [icon]="sortIcon"></fa-icon>
+                    </th>
+                    <th scope="col">Created by</th>
+                    <th scope="col">Created at</th>
+                    <th scope="col"
+                        class="sort">
+                        Progress
+                        <fa-icon [icon]="sortIcon"></fa-icon>
+                    </th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Last update</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let item of list"
+                    [routerLink]="['country']">
+                    <td>{{item.country}}</td>
+                    <td>{{item.createdBy}}</td>
+                    <td>{{item.createdAt}}</td>
+                    <td class="custom-progress">
+                        <div class="d-flex">
+                            <div class="circle"
+                                 *ngFor="let circle of [].constructor(8); index as i"
+                                 [class.completed]="i < item.progress">
+
+                                <span>{{i + 1}}</span>
+
+                                <fa-icon [icon]="completedIcon"></fa-icon>
+
+                            </div>
+                        </div>
+                    </td>
+                    <td>{{item.status}}</td>
+                    <td>{{item.lastUpdate}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>

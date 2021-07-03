@@ -1,0 +1,14 @@
+.breadcrumb {
+    a {
+        color: $primary;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .breadcrumb-item {
+        fa-icon {
+            color: $light;
+            margin-left: 9px;
+        }
+    }
+}

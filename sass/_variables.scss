@@ -43,9 +43,9 @@ $border-color:                      $light;
 // Fonts
 
 $font-family-base:                  'Asap', sans-serif;
-$headings-font-weight:              700;
+// $headings-font-weight:              700;
 
-$enable-shadows:                    true;
+$enable-shadows:                    false;
 $enable-negative-margins:           true;
 
 // Spacing
@@ -90,5 +90,26 @@ $input-font-size:                     .875rem;
 $form-select-indicator-color:         $primary;
 $form-select-bg-size:                 20px 17px;
 $form-select-color:                   $dark;
-$form-select-box-shadow:              none;
 $form-select-bg-position:             right -.14rem;
+
+// Buttons
+$btn-font-size:                       .875rem;
+$btn-line-height:                     1.25rem;
+$btn-padding-x:                       1rem;
+$btn-padding-y:                       .4rem;
+$btn-border-radius:                   1rem;
+
+// Breadcrumb
+$breadcrumb-font-size:                .875rem;
+$breadcrumb-active-color:             $dark;
+
+// Card
+$card-spacer-y:                       1.5rem;
+$card-spacer-x:                       0;
+$card-border-radius:                  .5rem;
+
+// Tables
+$table-th-font-weight:                400;
+$table-border-color:                  #F5F6F7;
+$table-cell-padding-y:                1.6255rem;
+$table-cell-padding-x:                1.5rem;

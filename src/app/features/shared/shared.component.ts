@@ -8,7 +8,7 @@ import { SidebarService } from 'src/core/services/sidebar.service';
 })
 export class SharedComponent implements OnInit {
 
-  readonly showSidebar = new Observable<boolean>()
+  readonly showSidebar = new Observable<boolean>();
 
   constructor(
     private sidebarService: SidebarService

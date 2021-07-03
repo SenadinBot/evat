@@ -18,6 +18,23 @@ export class SidebarComponent implements OnInit {
   readonly isMenuShown: Observable<boolean>;
   readonly show = new Subject<boolean>();
 
+  links = [
+    { link: "/", icon: faTachometerAlt, label: "Dashboard" },
+    { link: "/reports", icon: faChartLine, label: "Reports" },
+    { link: "/compliances", icon: faReceipt, label: "Compliances" },
+    { link: "/registration", icon: faFileSignature, label: "Registration" },
+    { link: "/companies", icon: faBuilding, label: "Companies" },
+    { link: "/teams", icon: faUsers, label: "Teams" },
+    { link: "/users", icon: faUsers, label: "Users" }
+  ];
+
+  companyLinks = [
+    { link: "/general", icon: faHome, label: "General" },
+    { link: "/activity", icon: faListAlt, label: "Activity" },
+    { link: "/tax-data", icon: faFileInvoiceDollar, label: "Tax data" },
+    { link: "/setup", icon: faCog, label: "Setup" }
+  ];
+
   constructor(
     private library: FaIconLibrary,
     private sidebarService: SidebarService,
@@ -45,23 +62,6 @@ export class SidebarComponent implements OnInit {
         ),
       this.show);
   }
-
-  links = [
-    { link: "/", icon: faTachometerAlt, label: "Dashboard" },
-    { link: "/reports", icon: faChartLine, label: "Reports" },
-    { link: "/compliances", icon: faReceipt, label: "Compliances" },
-    { link: "/registration", icon: faFileSignature, label: "Registration" },
-    { link: "/companies", icon: faBuilding, label: "Companies" },
-    { link: "/teams", icon: faUsers, label: "Teams" },
-    { link: "/users", icon: faUsers, label: "Users" }
-  ];
-
-  companyLinks = [
-    { link: "/general", icon: faHome, label: "General" },
-    { link: "/activity", icon: faListAlt, label: "Activity" },
-    { link: "/tax-data", icon: faFileInvoiceDollar, label: "Tax data" },
-    { link: "/setup", icon: faCog, label: "Setup" }
-  ];
 
   ngOnInit(): void {
   }
