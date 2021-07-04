@@ -1,0 +1,96 @@
+.tabs {
+    .nav-tabs {
+        .nav-item {
+            &:last-child {
+                .nav-link {
+                    margin-right: 0;
+                }
+            }
+
+            .nav-link {
+                color: $dark;
+                font-size: .875rem;
+                border: none;
+                background-color: transparent;
+                position: relative;
+                padding: 0.5rem .625rem;
+                margin-right: .75rem;
+                @include short-transition;
+
+                @include media-breakpoint-up(sm) {
+                    & {
+                        margin-right: 1rem;
+                    }
+                }
+
+                &.active {
+                    color: $primary;
+                    font-weight: 700;
+                    
+                    &:after {
+                        opacity: 1;
+                    }
+                }
+
+                &:hover {
+                    color: $primary;
+
+                    &:after {
+                        opacity: 1;
+                    }
+                }
+
+                &:after {
+                    content: "";
+                    height: 2px;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    background-color: $primary;
+                    opacity: 0;
+                    @include short-transition;
+                }
+            }
+        }
+    }
+
+    .tab-content {
+        padding: 15px;
+
+        @include media-breakpoint-up(md) {
+            & {
+                padding: 40px 24px;
+            }
+        }
+
+        .tab-item {
+            margin-bottom: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            span {
+                font-size: .875rem;
+                color: $lightGray;
+                display: block;
+                margin-bottom: 2px;
+            }
+
+            p {
+                margin: 0;
+            }
+
+            fa-icon {
+                color: $primary;
+                cursor: pointer;
+                @include short-transition;
+
+                &:hover {
+                    opacity: .9;
+                    @include transform(translateY(-3px));
+                }
+            }
+        }
+    }
+}

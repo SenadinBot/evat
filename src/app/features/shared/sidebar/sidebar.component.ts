@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faTimesCircle, faEllipsisV, faAngleLeft, faBuilding, faChartLine, faCog, faFileInvoiceDollar, faFileSignature, faHome, faListAlt, faReceipt, faTachometerAlt, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisV, faAngleLeft, faBuilding, faChartLine, faCog, faFileInvoiceDollar, faFileSignature, faHome, faListAlt, faReceipt, faTachometerAlt, faUsers, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { merge, Observable, Subject } from 'rxjs';
 import { SidebarService } from 'src/core/services/sidebar.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
@@ -13,7 +13,8 @@ import { distinctUntilChanged, map } from 'rxjs/operators';
 export class SidebarComponent implements OnInit {
 
   menuICon = faEllipsisV;
-  closeIcon = faTimesCircle;
+  closeIcon = faTimes;
+  leftIcon = faAngleLeft;
 
   readonly isMenuShown: Observable<boolean>;
   readonly show = new Subject<boolean>();
@@ -41,7 +42,6 @@ export class SidebarComponent implements OnInit {
     private breakpointObserver: BreakpointObserver
   ) {
     library.addIcons(
-      faAngleLeft,
       faTachometerAlt,
       faChartLine,
       faReceipt,

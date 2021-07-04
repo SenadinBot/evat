@@ -9,6 +9,10 @@
         @include transform(translateY(-3px));
         @include box-shadow-lg();
     }
+
+    &-success {
+        color: $white;
+    }
 }
 
 a,
